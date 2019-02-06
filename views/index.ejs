@@ -1,0 +1,17 @@
+<% include partials/header %>
+
+<div class="text-center">
+    <br><br>
+    <h1>Form Moban Customer</h1>
+    <form target="_blank" method="POST" action="/send">
+        <label>Isi Teks</label><br>
+        <textarea name="customText" style="width:500px; height: 200px"></textarea>
+        <br>
+        <label>Nomer Telefon</label><br>
+        <input type="text" name="noHP" value="62">
+        <br><br>
+        <input type="submit" value="Kirim Whatsapp">
+    </form>
+</div>
+
+<% include partials/footer %>
