@@ -1,39 +1,49 @@
 <% include partials/header %>
 
-<div class="text-center">
+<div class="container">
     <br><br>
-    <h1>Form Edukasi Customer</h1>
+    <h1 class="text-center">Form Edukasi Customer</h1><hr>
     <form target="_blank" method="POST" action="/send">
-        <!-- <div>
-            <p>Waktu Edukasi</p>
-            <input type="radio" name="waktu" value="Pagi" style="margin-right:10px; margin-left: 10px"> Pagi
-            <input type="radio" name="waktu" value="Siang" style="margin-right:10px; margin-left: 10px" checked="checked"> Siang
-            <input type="radio" name="waktu" value="Malam" style="margin-right:10px; margin-left: 10px"> Malam
-        </div> -->
         <br>
-        <label>Nama Customer : </label>
-        <input type="text" name="namaCust" value="Bapak/Ibu">
-        <br>
-        <label>Nomor Tiket : </label>
-        <input type="text" name="nomerTiket" value="IN">
-        <br>
-        <label>Nomor Layanan : </label>
-        <input type="text" name="nomerLayanan" value="">
-        <br>
-        <div>
-            <br><br>
-            <p>Jenis Edukasi</p>
-            <input type="radio" name="jenisLayanan" value="cabutUSEE" style="margin-right:10px; margin-left: 10px"> Cabut USEETV <br>
-            <input type="radio" name="jenisLayanan" value="cabutUSEEINET" style="margin-right:10px; margin-left: 10px"> Pasang USEETV dan INET <br>
-            <input type="radio" name="jenisLayanan" value="seamless" style="margin-right:10px; margin-left: 10px"> Registrasi Seamless <br>
-            <input type="radio" name="jenisLayanan" value="shareLoc" style="margin-right:10px; margin-left: 10px"> Share Location <br>
-            <input type="radio" name="jenisLayanan" value="isolirSementara" style="margin-right:10px; margin-left: 10px"> Isolir Sementara <br>
+        <div class="text-center">
+            <div class="grid-container">
+                <label class="grid-item">Nama Customer :</label>
+                <input class="grid-item text-pelanggan" type="text" name="namaCust" value="Bapak/Ibu" style="width: 100%; margin-left: 10px; margin-bottom:0.5em">
+                <label class="grid-item">Nomor Tiket :</label>
+                <input class="grid-item text-pelanggan" type="text" name="nomorTiket" value="IN" style="width: 100%; margin-left: 10px; margin-bottom:0.5em">
+                <label class="grid-item">Nomor Layanan :</label>
+                <input class="grid-item text-pelanggan" type="text" name="nomorLayanan" value="" style="width: 100%; margin-left: 10px; margin-bottom:0.5em">
+                <label class="grid-item">Nomor Telefon :</label>
+                <input class="grid-item text-pelanggan" type="text" name="noHP" value="62" style="width: 100%; margin-left: 10px; margin-bottom:0.5em">
+            </div>
         </div>
-        <br>
-        <label>Nomer Telefon</label><br>
-        <input type="text" name="noHP" value="62">
-        <br><br>
-        <input type="submit" value="Kirim Whatsapp">
+        <hr><h3 class="text-center">Jenis Edukasi</h3>
+        <div >
+            <hr><input type="radio" name="jenisLayanan" value="cabutUSEE" style="margin-right:10px"> Cabut USEETV <br>
+            <hr><input type="radio" name="jenisLayanan" value="cabutUSEEINET" style="margin-right:10px"> Pasang USEETV dan INET <br>
+            <hr><input type="radio" name="jenisLayanan" value="seamless" style="margin-right:10px"> Registrasi Seamless <br>
+            <hr><input type="radio" name="jenisLayanan" value="shareLoc" style="margin-right:10px"> Share Location <br>
+            <hr><input type="radio" name="jenisLayanan" value="isolirSementara" style="margin-right:10px"> Isolir Sementara <br>
+            <hr>
+            <input type="radio" name="jenisLayanan" value="pelunasan" style="margin-right:10px"> Melunasi Tagihan <br>
+            <input type="text" class="text-edukasi" name="alasanPelunasan" placeholder="Isikan alasan pelunasan" style="width: 97%; margin:10px; margin-left: 28px"><br>
+            <hr>
+            <input type="radio" name="jenisLayanan" value="responUmum" style="margin-right:10px"> Respon Umum <br>
+            <input type="text" class="text-edukasi" name="textRespon" placeholder="Isikan alasan laporan" style="width: 97%; margin:10px; margin-left: 28px"><br>
+            <hr>
+            <input type="radio" name="jenisLayanan" value="responTagihan" style="margin-right:10px"> Respon tagihan<br>
+            <input type="text" class="text-edukasi" name="tagihanLebih" placeholder="Kelebihan tagihan" style="width: 97%; margin-left: 28px"><br>
+            <input type="text" class="text-edukasi" name="tagihanKoreksi" placeholder="Tagihan koreksi" style="width: 97%; margin-left: 28px"><br>
+            <input type="text" class="text-edukasi" name="alasanPelaporan" placeholder="Alasan terkait pelaporan" style="width: 97%; margin:10px; margin-left: 28px">
+            <hr>
+            <input type="radio" name="jenisLayanan" value="customEdukasi" style="margin-right:10px">Custom Edukasi<br>
+            <textarea class="text-edukasi" rows="4" cols="100" name="edukasiCustom"> </textarea>
+        </div>
+        <br><hr>
+        <div class="text-center">
+            <br><input type="submit" value="Kirim Whatsapp" class="btn btn-success">
+        </div>
+        <br><br><br><br><br><br>
     </form>
 </div>
 
