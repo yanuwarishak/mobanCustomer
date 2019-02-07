@@ -2,10 +2,14 @@
 
 <div class="container">
     <br><br>
-    <h1 class="text-center">Form Edukasi Customer</h1><hr>
+    <h2 class="text-center">Form Edukasi Customer</h2>
+    <div class=text-center>
+        <img src="logo_telkom.png" alt="Logo Telkom" style="width:25%">
+    </div><br><br>
+    <hr>
     <form target="_blank" method="POST" action="/send">
-        <br>
         <div class="text-center">
+            <h4>Detail Informasi Pelanggan</h4><br>
             <div class="grid-container">
                 <label class="grid-item">Nama Customer :</label>
                 <input class="grid-item text-pelanggan" type="text" name="namaCust" value="Bapak/Ibu" style="width: 100%; margin-left: 10px; margin-bottom:0.5em">
@@ -17,27 +21,37 @@
                 <input class="grid-item text-pelanggan" type="text" name="noHP" value="62" style="width: 100%; margin-left: 10px; margin-bottom:0.5em">
             </div>
         </div>
-        <hr><h3 class="text-center">Jenis Edukasi</h3>
+        <hr><h4 class="text-center">Jenis Edukasi</h4>
         <div >
-            <hr><input type="radio" name="jenisLayanan" value="cabutUSEE" style="margin-right:10px"> Cabut USEETV <br>
-            <hr><input type="radio" name="jenisLayanan" value="cabutUSEEINET" style="margin-right:10px"> Pasang USEETV dan INET <br>
-            <hr><input type="radio" name="jenisLayanan" value="seamless" style="margin-right:10px"> Registrasi Seamless <br>
-            <hr><input type="radio" name="jenisLayanan" value="shareLoc" style="margin-right:10px"> Share Location <br>
-            <hr><input type="radio" name="jenisLayanan" value="isolirSementara" style="margin-right:10px"> Isolir Sementara <br>
+            <hr><input type="radio" name="jenisLayanan" value="cabutUSEE" style="margin-right:10px" checked="checked">Cabut USEETV <br>
+            <hr><input type="radio" name="jenisLayanan" value="cabutUSEEINET" style="margin-right:10px">Pasang USEETV dan INET <br>
+            <hr><input type="radio" name="jenisLayanan" value="seamless" style="margin-right:10px">Registrasi Seamless <br>
+            <hr><input type="radio" name="jenisLayanan" value="shareLoc" style="margin-right:10px">Share Location <br>
+            <hr><input type="radio" name="jenisLayanan" value="isolirSementara" style="margin-right:10px">Isolir Sementara <br>
             <hr>
-            <input type="radio" name="jenisLayanan" value="pelunasan" style="margin-right:10px"> Melunasi Tagihan <br>
-            <input type="text" class="text-edukasi" name="alasanPelunasan" placeholder="Isikan alasan pelunasan" style="width: 97%; margin:10px; margin-left: 28px"><br>
+
+            <input type="radio" name="jenisLayanan" value="pelunasan" style="margin-right:10px">Melunasi Tagihan <br>
+            <div id="tf-pelunasan">
+                <input type="text" class="text-edukasi" name="alasanPelunasan" placeholder="Isikan alasan pelunasan" style="width: 97%; margin:10px; margin-left: 24px"><br>
+            </div>
             <hr>
-            <input type="radio" name="jenisLayanan" value="responUmum" style="margin-right:10px"> Respon Umum <br>
-            <input type="text" class="text-edukasi" name="textRespon" placeholder="Isikan alasan laporan" style="width: 97%; margin:10px; margin-left: 28px"><br>
+
+            <input type="radio" name="jenisLayanan" value="responUmum" style="margin-right:10px">Respon Umum <br>
+            <div id="tf-responUmum">
+                <input type="text" class="text-edukasi" name="textRespon" placeholder="Isikan alasan laporan" style="width: 97%; margin:10px; margin-left: 24px"><br>
+            </div>
             <hr>
-            <input type="radio" name="jenisLayanan" value="responTagihan" style="margin-right:10px"> Respon tagihan<br>
-            <input type="text" class="text-edukasi" name="tagihanLebih" placeholder="Kelebihan tagihan" style="width: 97%; margin-left: 28px"><br>
-            <input type="text" class="text-edukasi" name="tagihanKoreksi" placeholder="Tagihan koreksi" style="width: 97%; margin-left: 28px"><br>
-            <input type="text" class="text-edukasi" name="alasanPelaporan" placeholder="Alasan terkait pelaporan" style="width: 97%; margin:10px; margin-left: 28px">
+
+            <input type="radio" name="jenisLayanan" value="responTagihan" style="margin-right:10px">Respon tagihan<br>
+            <div id="tf-respontagihan">
+                <input type="text" class="text-edukasi" name="tagihanLebih" placeholder="Kelebihan tagihan" style="width: 97%; margin-left: 24px"><br>
+                <input type="text" class="text-edukasi" name="tagihanKoreksi" placeholder="Tagihan koreksi" style="width: 97%; margin-left: 24px"><br>
+                <input type="text" class="text-edukasi" name="alasanPelaporan" placeholder="Alasan terkait pelaporan" style="width: 97%; margin:10px; margin-left: 24px">
+            </div>
             <hr>
+            
             <input type="radio" name="jenisLayanan" value="customEdukasi" style="margin-right:10px">Custom Edukasi<br>
-            <textarea class="text-edukasi" rows="4" cols="100" name="edukasiCustom"> </textarea>
+            <textarea style="margin-left: 24px; width: 97%" id="tf-custom" class="text-edukasi" rows="4" cols="100" name="edukasiCustom" placeholder="Tuliskan edukasi yang diinginkan"></textarea>
         </div>
         <br><hr>
         <div class="text-center">
@@ -46,5 +60,42 @@
         <br><br><br><br><br><br>
     </form>
 </div>
+
+<script>
+$('input[name="jenisLayanan"]').click(function(e) {
+    if(e.target.value === 'responTagihan') {
+        $('#tf-respontagihan').show();
+        $('#tf-responUmum').hide();
+        $('#tf-pelunasan').hide();
+        $('#tf-custom').hide();
+    } else if(e.target.value === 'responUmum'){
+        $('#tf-respontagihan').hide();
+        $('#tf-responUmum').show();
+        $('#tf-pelunasan').hide();
+        $('#tf-custom').hide();
+    } else if(e.target.value === 'pelunasan'){
+        $('#tf-respontagihan').hide();
+        $('#tf-responUmum').hide();
+        $('#tf-pelunasan').show();
+        $('#tf-custom').hide();
+    } else if(e.target.value === 'customEdukasi'){
+        $('#tf-respontagihan').hide();
+        $('#tf-responUmum').hide();
+        $('#tf-pelunasan').hide();
+        $('#tf-custom').show();
+    } else if(e.target.value != 'pelunasan'||e.target.value != 'responUmum'||e.target.value != 'responTagihan'||e.target.value != 'customEdukasi'){
+        $('#tf-respontagihan').hide();
+        $('#tf-responUmum').hide();
+        $('#tf-pelunasan').hide();
+        $('#tf-custom').hide();
+    }
+  })
+  
+$('#tf-respontagihan').hide();
+$('#tf-responUmum').hide();
+$('#tf-pelunasan').hide();
+$('#tf-custom').hide();
+
+</script>
 
 <% include partials/footer %>
