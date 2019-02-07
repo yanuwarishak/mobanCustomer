@@ -125,7 +125,7 @@ app.post('/send', function(req,res){
 
 // app.listen(process.env.PORT || 8080);
 
-app.listen(8080,function(){
-    console.log('Server started in port 8080');
-    console.log('http://localhost:8080');
+app.listen(process.env.PORT || 8080, function(){
+    // console.log('Server started in port 8080');
+    // console.log('http://localhost:8080');
 });
