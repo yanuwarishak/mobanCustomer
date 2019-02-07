@@ -2,10 +2,33 @@
 
 <div class="text-center">
     <br><br>
-    <h1>Form Moban Customer</h1>
+    <h1>Form Edukasi Customer</h1>
     <form target="_blank" method="POST" action="/send">
-        <label>Isi Teks</label><br>
-        <textarea name="customText" style="width:500px; height: 200px"></textarea>
+        <!-- <div>
+            <p>Waktu Edukasi</p>
+            <input type="radio" name="waktu" value="Pagi" style="margin-right:10px; margin-left: 10px"> Pagi
+            <input type="radio" name="waktu" value="Siang" style="margin-right:10px; margin-left: 10px" checked="checked"> Siang
+            <input type="radio" name="waktu" value="Malam" style="margin-right:10px; margin-left: 10px"> Malam
+        </div> -->
+        <br>
+        <label>Nama Customer : </label>
+        <input type="text" name="namaCust" value="Bapak/Ibu">
+        <br>
+        <label>Nomor Tiket : </label>
+        <input type="text" name="nomerTiket" value="IN">
+        <br>
+        <label>Nomor Layanan : </label>
+        <input type="text" name="nomerLayanan" value="">
+        <br>
+        <div>
+            <br><br>
+            <p>Jenis Edukasi</p>
+            <input type="radio" name="jenisLayanan" value="cabutUSEE" style="margin-right:10px; margin-left: 10px"> Cabut USEETV <br>
+            <input type="radio" name="jenisLayanan" value="cabutUSEEINET" style="margin-right:10px; margin-left: 10px"> Pasang USEETV dan INET <br>
+            <input type="radio" name="jenisLayanan" value="seamless" style="margin-right:10px; margin-left: 10px"> Registrasi Seamless <br>
+            <input type="radio" name="jenisLayanan" value="shareLoc" style="margin-right:10px; margin-left: 10px"> Share Location <br>
+            <input type="radio" name="jenisLayanan" value="isolirSementara" style="margin-right:10px; margin-left: 10px"> Isolir Sementara <br>
+        </div>
         <br>
         <label>Nomer Telefon</label><br>
         <input type="text" name="noHP" value="62">
